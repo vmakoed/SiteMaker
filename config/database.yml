@@ -1,28 +1,21 @@
 development:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
-  reconnect: false
   database: sitemaker_database
   pool: 5
-  username: root
-  password: lenovo_a820
-  host: localhost
+  timeout: 5000
 
 test:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
-  reconnect: false
   database: sitemaker_database
   pool: 5
-  username: root
-  password: lenovo_a820
-  host: localhost
+  timeout: 5000
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
-  reconnect: false
+  database: sitemaker_database
   pool: 5
-  database: homework_production
-  username: homework
-  password: <%= ENV['HOMEWORK_DATABASE_PASSWORD'] %>
+  timeout: 5000
+
