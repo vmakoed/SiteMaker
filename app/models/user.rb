@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   validates :name, uniqueness: true
   devise :database_authenticatable, :registerable,
-       	 :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable, :zxcvbnable
+       	 :recoverable, :rememberable, :trackable, :validatable, :zxcvbnable
   has_many :pages, dependent: :destroy
   has_many :images, dependent: :destroy
   before_save :set_default_role
