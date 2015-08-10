@@ -1,0 +1,18 @@
+<ol class="breadcrumb">
+  <li ><%= link_to t('breadcrumb.users'), users_path %></li>
+  <li ><%= link_to @user.name, user_path(@user) %></li>
+  <li class="active"><%= t('breadcrumb.pages') %></li>
+  <li class="active"><%= t('breadcrumb.new') %></li>
+</ol>
+
+<div class="form-group">
+  <%= form_for @page, url: user_pages_path do |f| %>
+    <p>
+      <%= f.label t('.title') %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </p>
+    <div class="btn-group" role="group">
+      <%= f.submit :value => t('.create_page'), class: 'btn btn-success' %>
+    </div>
+  <% end %>
+</div>

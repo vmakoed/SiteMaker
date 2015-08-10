@@ -1,0 +1,11 @@
+<div class="form-component" content-type="Video">
+  <input type="hidden" name="components[<%= component.order %>][<%= component.content_type %>]" value="<%= component.content %>" class="hidden-input">
+  <div class="form-group">
+    <label><%= t('content_type.video') %></label>
+    <textarea class="form-control" rows="1" data-order="<%= component.order %>" content-type="Video"><%= component.content %></textarea><br>
+    <%= link_to 'Destroy', user_page_component_path(@page.user, @page, component),
+    method: :delete,
+    data: { confirm: 'Are you sure?' },
+    class: 'btn btn-danger' %>
+  </div>
+</div>

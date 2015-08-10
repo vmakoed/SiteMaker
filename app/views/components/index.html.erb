@@ -1,0 +1,17 @@
+<h1>Listing components</h1>
+
+<table>
+  <tr>
+    <th>content_type</th>
+    <th>content</th>
+    <th>order</th>
+  </tr>
+
+  <% @components.each do |component| %>
+    <tr>
+      <td><%= component.content_type %></td>
+      <td><%= component.content %></td>
+      <td><%= component.order %></td>
+    </tr>
+  <% end %>
+</table>

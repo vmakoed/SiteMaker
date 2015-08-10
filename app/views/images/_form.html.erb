@@ -1,0 +1,11 @@
+<%= form_for @image, url: user_images_path do |f| %>
+
+    <%= f.file_field :url, class: "filestyle" %>
+    <br>
+
+    <div class="btn-group" role="group">
+      <%= f.submit class: 'btn btn-success' %>
+      <%= link_to 'Back to Images', user_images_path, class: 'btn btn-default' %>
+    </div>
+<% end %>
+

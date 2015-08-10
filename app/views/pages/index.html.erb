@@ -1,0 +1,63 @@
+<% if @user.id == current_user.id || current_user.role == 'admin' %>
+    <ol class="breadcrumb">
+      <li ><%= link_to t('breadcrumb.users'), users_path %></li>
+      <li ><%= link_to @user.name, user_path(@user) %></li>
+      <li class="active"><%= t('breadcrumb.pages') %></li>
+    </ol>
+  <div class="btn-group" role="group">
+  <% if can? :manage, :all %>
+    <%= link_to t('.all_users'), users_path, class: 'btn btn-primary' %>
+  <% end %>
+      <%= link_to t('.create_new_page'), new_user_page_path, class: 'btn btn-success'%>
+        <%= link_to t('.user_images'), user_images_path, class: 'btn btn-info' %>
+  </div>
+  <br>
+  <br>
+  <div class="panel panel-default">
+    <table class="table table-hover">
+      <thead>
+        <th>Title</th>
+        <th>Controls</th>
+      </thead>
+      <tbody>
+        <% @pages.each do |page| %>
+          <tr>
+            <td><%= page.title %></td>
+            <td>
+              <div class="btn-group" role="group">
+                <%= link_to t('controls.show'), user_page_path(@user, page), class: 'btn btn-default' %>
+                <%= link_to t('controls.edit'), edit_user_page_path(@user, page), class: 'btn btn-warning' %>
+                <%= link_to t('controls.destroy'), user_page_path(@user, page),
+                method: :delete,
+                data: { confirm: t('warnings.are_you_sure') },
+                class: 'btn btn-danger' %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <div class="container">
+    <div class="row">
+      <% @pages.each do |page| %>
+        <div class="col-md-6 thumb">
+            <a href=<%= user_page_path(page.user, page)%> class="thumbnail">
+              <div class="page-preview-container">
+                <% if page.components.where(content_type: "Gallery").first() %>
+                  <%= cl_image_tag(page.components.where(content_type: "Gallery").first().gallery_images.first().link, class: 'page-miniature') %>
+                <% else %>
+                  <img src="<%= asset_path "no-gallery-image.jpg" %>" class='page-miniature'>
+                <% end %>
+              </div>
+              <div class="caption">
+                <h3><%= page.title %></h3>
+                <p>by <%= page.user.name %></p>
+              </div>
+            </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

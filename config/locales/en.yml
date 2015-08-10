@@ -1,0 +1,84 @@
+en:
+  hello: "Hello world"
+
+  layouts:
+    application:
+      navbar:
+        sitename: "SiteMaker"
+        home: "Home"
+        admin_tools: "Admin Tools"
+        new_page: "New Page"
+        workspace: "Workspace"
+        search: "Search"
+        log_out: "Log out"
+        log_in: "Log in"
+        sign_up: "Sign up"
+
+  controls:
+    show: "Show"
+    destroy: "Destroy"
+    edit: "Edit"
+    back: "Back"
+    update: "Update"
+
+  pages:
+    show:
+      all_pages_by_this_user: "All pages by this user"
+      edit_this_page: "Edit this page"
+    index:
+      create_new_page: "Create new page"
+      user_images: "User images"
+      all_users: "All users"
+    new:
+      title: "Page title"
+      create_page: "Create page"
+    form:
+      title: "Title"
+    page_editor:
+      show_images: "Show images"
+      hide_images: "Hide images"
+      drop_components: "Drop components here"
+      images: "Images"
+      load_images: "Images can be loaded in Workspace"
+      update_page: "Update page"
+    publish_button:
+      update_and_hide_page: "Update and hide page"
+      update_and_publish_page: "Update and publish page"
+
+
+  warnings:
+    are_you_sure: "Are you sure?"
+
+  breadcrumb:
+    users: "users"
+    pages: "pages"
+    edit: "edit"
+    new: "new"
+
+  forms:
+    profile:
+      email: "E-mail"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      current_password: "Current password"
+      password_needed: "we need your current password to confirm your changes"
+      cancel_account: "Cancel my account"
+
+  content_type:
+    text: "Text"
+    gallery: "Gallery"
+    video: "Video"
+
+  components:
+    samples:
+      gallery:
+          images: "Images"
+          drop_images: "Drop images here"
+    forms:
+      gallery:
+          drop_images: "Drop images here"
+
+  images:
+    index:
+      new_image: "New image"
+      all_users: "All users"

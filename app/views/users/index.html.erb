@@ -1,0 +1,33 @@
+<ol class="breadcrumb">
+  <li class="active"><%= link_to 'Users', users_path %></li>
+</ol>
+
+<br>
+<div class="panel panel-primary">
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Controls</th>
+    </tr>
+  </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td>
+            <div class="btn-group" role="group">
+              <%= link_to 'Show', user_path(user), class: 'btn btn-default' %>
+              <%= link_to 'Pages', user_pages_path(user), class: 'btn btn-default' %>
+              <%= link_to 'Images', user_images_path(user), class: 'btn btn-default' %>
+              <%= link_to 'Destroy', user_path(user),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' },
+                      class: 'btn btn-danger' %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

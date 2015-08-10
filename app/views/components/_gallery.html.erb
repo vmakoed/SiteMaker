@@ -1,0 +1,7 @@
+<div class="component component-gallery">
+  <div class="fotorama" data-allowfullscreen="native" data-nav="thumbs">
+    <% component.gallery_images.each_with_index do |image, index| %>
+    <%= cl_image_tag image.link, class: 'center-block' %>
+    <% end %>
+  </div>
+</div>

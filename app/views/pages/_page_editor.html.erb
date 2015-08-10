@@ -1,0 +1,56 @@
+  <p>
+    <div class="row">
+      <div class="col-md-6 text-left">
+        <div class="btn-group" role="group">
+          <%= render 'components/thumbnails/text' %>
+          <%= render 'components/thumbnails/gallery' %>
+          <%= render 'components/thumbnails/video' %>
+        </div>
+      </div>
+      <div class="col-md-6 text-right">
+        <div class="btn-group" role="group">
+          <div id="images-mode-on-button" class="btn btn-default"><%= t('.show_images') %></div>
+          <div id="images-mode-off-button" class="btn btn-default"><%= t('.hide_images') %></div>
+        </div>
+      </div>
+    </div>
+  </p>
+  <div class="row">
+    <div class="col-md-12" id="components-panel-container">
+      <div class="panel panel-default" id="components-panel">
+        <div class="panel-heading">
+          <%= t('.drop_components') %>
+        </div>
+        <div class="panel-body" id="components-panel-body">
+          <ul class="list-group" id="components-list">
+            <% @page.components.each do |component| %>
+            <li class="list-group-item">
+              <%= render partial: "components/form", locals: {component: component} %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="panel-footer">
+          <div class="btn-group" role="group">
+          <%= submit_tag(value = t('.update_page'), class: 'btn btn-success') %>
+          </div>
+          <div id="publish" style="display:inline">
+            <%= render "publish_button" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-0" id="images-panel-container">
+      <div class="panel panel-primary" id="images-panel">
+        <div class="panel-heading">
+          <%= t('.images') %>
+        </div>
+        <div class="panel-body">
+          <%= render partial: 'images/gridview', locals: {images: @user.images} %>
+        </div>
+        <div class="panel-footer">
+          <label><%= t('.load_images') %></label>
+        </div>
+      </div>
+    </div>
+  </div>

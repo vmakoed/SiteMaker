@@ -1,0 +1,11 @@
+<div class = "row">
+  <% if images.count > 0 %>
+    <% images.each do |image| %>
+      <div class="col-md-3 thumb-image">
+        <div class="thumbnail image-miniature">
+          <%= cl_image_tag(image.url, :crop => :fill) %>
+        </div>
+      </div>
+    <% end %>
+  <% end  %>
+</div>

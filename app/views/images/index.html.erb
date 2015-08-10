@@ -1,0 +1,32 @@
+<ol class="breadcrumb">
+  <li ><%= link_to 'Users', users_path %></li>
+  <li ><%= link_to @user.name, user_path(@user) %></li>
+  <li class="active">Images</li>
+</ol>
+
+<br>
+<div class="btn-group" role="group">
+  <%= link_to t('.new_image'), new_user_image_path, class: 'btn btn-success' %>
+  <% if can? :manage, :all %>
+    <%= link_to t('.all_users'), users_path, class: 'btn btn-info' %>
+  <% end  %>
+</div>
+<br>
+<br>
+<div class="row">
+      <% @images.each do |image| %>
+        <div class="col-md-3">
+        <div class="thumbnail"><div class="image-preview-container">
+          <%= cl_image_tag image.url, :crop => :fill, class: 'image-miniature' %></div>
+            <div class="btn-group" role="group">
+            <div class="caption">
+              <%= link_to 'Destroy', user_image_path(@user, image),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' },
+                      class: 'btn btn-danger' %>
+              </div>
+            </div>
+          </div>
+          </div>
+      <% end %>
+</div>

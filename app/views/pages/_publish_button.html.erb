@@ -1,0 +1,5 @@
+<% if @page.published == 1 %>
+  <%= submit_tag t('.update_and_hide_page'), :name => "hide", class: 'btn btn-success' %>
+<% else %>
+  <%= submit_tag t('.update_and_publish_page'), :name => "publish", class: 'btn btn-success' %>
+<% end %>

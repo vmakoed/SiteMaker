@@ -1,0 +1,15 @@
+<%= javascript_include_tag "page_editor" %>
+<%= javascript_include_tag "autosize" %>
+<%= javascript_include_tag "showdown" %>
+
+<% if can? :manage, :all %>
+  <ol class="breadcrumb">
+    <li ><%= link_to t('breadcrumb.users'), users_path %></li>
+    <li><%= @user.name %></li>
+    <li ><%= link_to t('breadcrumb.pages'), user_pages_path(@user) %></li>
+    <li ><%= link_to @page.title, user_page_path(@user, @page) %></li>
+    <li class="active"><%= t('breadcrumb.edit') %></li>
+  </ol>
+<% end %>
+
+<%= render 'form' %>

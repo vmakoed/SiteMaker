@@ -1,0 +1,28 @@
+<div class="form-group">
+  <%= form_for @user do |f| %>
+
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@user.errors.count, "error") %> prohibited
+          this article from being saved:
+        </h2>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </p>
+
+    <div class="btn-group" role="group">
+      <%= f.submit class: 'btn btn-success' %>
+      <%= link_to 'Back to users', users_path, class: 'btn btn-default' %>
+    </div>
+  <% end %>
+</div>

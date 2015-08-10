@@ -1,0 +1,83 @@
+ru:
+  hello: "Привет, мир"
+
+  layouts:
+    application:
+      navbar:
+        sitename: "СайтМэйкер"
+        home: "Главная"
+        admin_tools: "Админ-панель"
+        new_page: "Создать страницу"
+        workspace: "Панель управления"
+        search: "Поиск"
+        log_out: "Выйти"
+        log_in: "Войти"
+        sign_up: "Регистрация"
+
+  controls:
+    show: "Просмотр"
+    destroy: "Удалить"
+    edit: "Редактировать"
+    back: "Назад"
+    update: "Обновить"
+
+  pages:
+    show:
+      all_pages_by_this_user: "Все страницы пользователя"
+      edit_this_page: "Редактировать страницу"
+    index:
+      create_new_page: "Создать новую страницу"
+      user_images: "Изображения пользователя"
+      all_users: "Все пользователи"
+    new:
+      title: "Заголовок страницы"
+      create_page: "Создать страницу"
+    form:
+      title: "Заголовок"
+    page_editor:
+      show_images: "Показать изображения"
+      hide_images: "Скрыть изображения"
+      drop_components: "Перетащите сюда компоненты"
+      images: "Изображения"
+      load_images: "Изображения можно загрузить в панели управления"
+      update_page: "Сохранить страницу"
+    publish_button:
+      update_and_hide_page: "Сохранить и скрыть страницу"
+      update_and_publish_page: "Сохранить и опубликовать страницу"
+
+  warnings:
+    are_you_sure: "Вы уверены?"
+
+  breadcrumb:
+    users: "пользователи"
+    pages: "страницы"
+    edit: "редактировать"
+    new: "создать"
+
+  forms:
+    profile:
+      email: "E-mail"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      current_password: "Current password"
+      password_needed: "we need your current password to confirm your changes"
+      cancel_account: "Cancel my account"
+
+  content_type:
+    text: "Текст"
+    gallery: "Галерея"
+    video: "Видео"
+
+  components:
+    samples:
+      gallery:
+        images: "Изображения"
+        drop_images: "Перетащите сюда изображения"
+    forms:
+      gallery:
+        drop_images: "Перетащите сюда изображения"
+
+  images:
+    index:
+      new_image: "Добавить изображение"
+      all_users: "Все пользователи"

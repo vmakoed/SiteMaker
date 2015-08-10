@@ -1,0 +1,25 @@
+<div class="form-component" content-type="Gallery">
+
+  <input type="hidden" class="hidden-input">
+  <label><%= t('content_type.gallery') %></label>
+  <div class="panel panel-default panel-gallery">
+    <div class="panel-heading">
+      <%= t('.drop_images') %>
+    </div>
+    <div class="panel-body panel-gallery">
+      <ul class="list-group list-gallery-images">
+        <% component.gallery_images.each_with_index do |image, index| %>
+        <li class="list-group-item" content-type="gallery-image">
+          <input type="hidden" class="hidden-input" name="components[<%= component.order %>][Gallery][<%= index %>]" value="<%= image.link %>">
+          <div class="thumb">
+            <div class="thumbnail">
+              <img src="<%= image.link %>">
+            </div>
+          </div>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <a class="btn btn-danger destroy-component-button">Destroy</a>
+</div>

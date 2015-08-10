@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <% @pages.sort_by { |m| [m.created_at, m.updated_at].max }.reverse!.each do |page| %>
+    <div class="col-md-6 thumb">
+
+      <a href=<%= user_page_path(page.user, page)%> class="thumbnail"><div class="page-preview-container">
+        <% if page.components.where(content_type: "Gallery").first() %>
+        <%= cl_image_tag(page.components.where(content_type: "Gallery").first().gallery_images.first().link, class: 'page-miniature') %>
+        <% else %>
+        <img src="<%= asset_path "no-gallery-image.jpg" %>" class='page-miniature'>
+        <% end %>
+      </div>
+
+      <div class="caption">
+        <h2><%= page.title %></h2>
+        <p><%= page.user.name %>, <%= page.created_at %></p>
+      </div>
+    </a>
+  </div>
+  <% end %>
+</div>
+</div>

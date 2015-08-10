@@ -1,0 +1,31 @@
+<ol class="breadcrumb">
+  <li ><%= link_to 'Users', users_path %></li>
+  <li class="active"><%= @user.name %></li>
+</ol>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Controls</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td><%= @user.name %></td>
+    <td>
+      <div class="btn-group" role="group">
+        <%= link_to 'Pages', user_pages_path(@user), class: 'btn btn-success' %>
+        <%= link_to 'Images', user_images_path(@user), class: 'btn btn-default' %>
+        <%= link_to 'Destroy', user_path(@user),
+        method: :delete,
+        data: { confirm: 'Are you sure?' },
+        class: 'btn btn-danger' %>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Back to users', users_path, class: 'btn btn-primary' %>

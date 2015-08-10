@@ -1,0 +1,33 @@
+<% if can? :manage, :all %>
+  <ol class="breadcrumb">
+    <li ><%= link_to t('breadcrumb.users'), users_path %></li>
+    <li ><%= link_to @user.name, user_path(@user) %></li>
+    <li ><%= link_to t('breadcrumb.pages'), user_pages_path(@user) %></li>
+    <li class="active"><%= @page.title %></li>
+  </ol>
+<% end %>
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="page-heading">
+      <h2>
+        <%= @page.title %>
+      </h2>
+      <h5>
+        <%= @page.user.name %>, <%= @page.created_at %>
+      </h5>
+      <div class="btn-group" role="group">
+      <% if can? :manage, @page %>
+        <%= link_to t('.edit_this_page'), edit_user_page_path(@user, @page), class: 'btn btn-warning' %>
+      <% end  %>
+      <%= link_to t('.all_pages_by_this_user'), user_pages_path(@user), class: 'btn btn-primary' %>
+    </div>
+    </div>
+    <hr>
+    <% @page.components.each do |component| %>
+      <%= render partial: "components/#{component.content_type.underscore}", locals: {component: component} %>
+    <% end %>
+  </div>
+  <div class="col-md-2"></div>
+</div>

@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to t('layouts.application.navbar.sitename'), root_path, class: 'navbar-brand' %>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav">
+        <li><%= link_to t('layouts.application.navbar.home'), root_path %></li>
+        <% if can? :index, User %>
+          <li><%= link_to t('layouts.application.navbar.admin_tools'), users_path %></li>
+        <% end %>
+        <% if user_signed_in? %>
+          <li><%= link_to t('layouts.application.navbar.new_page'), new_user_page_path(current_user) %></li>
+          <li><%= link_to t('layouts.application.navbar.workspace'), user_pages_path(current_user) %></li>
+        <% end %>
+      </ul>
+      <ul class="nav navbar-nav pull-right">
+        <% if user_signed_in? %>
+              <li></li>
+              <li><%= link_to current_user.name, edit_user_registration_path %></li>
+              <li><%= link_to t('layouts.application.navbar.log_out'), destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to t('layouts.application.navbar.log_in'), new_user_session_path %></li>
+          <li><%= link_to t('layouts.application.navbar.sign_up'), new_user_registration_path %></li>
+        <% end %>
+        <li style="height:50px">
+            <%= link_to_unless_current "EN", locale: "en" do %>
+              <div class="btn btn-default" style="position: relative;
+    top: 50%;
+    transform: translateY(-50%);">EN</div>
+            <% end  %>
+        </li>
+        <li style="height:50px">
+            <%= link_to_unless_current "RU", locale: "ru" do %>
+              <div class="btn btn-default", style="position: relative;
+    top: 50%;
+    transform: translateY(-50%);">RU</div>
+            <% end  %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

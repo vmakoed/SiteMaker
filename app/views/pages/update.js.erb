@@ -1,0 +1,9 @@
+$('#flash').html("<%= escape_javascript render 'layouts/flash' %><% flash.clear() %>");
+
+$('#flash').hide();
+$('#flash').css({'position': 'fixed',
+     'top': '90', 'z-index': '101'});
+$('#flash').fadeIn(1000);
+setTimeout(function(){$('#flash').fadeOut(3000)}, 2000);
+
+$("#publish").html("<%= escape_javascript render 'publish_button' %>");

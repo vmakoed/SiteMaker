@@ -1,0 +1,17 @@
+<div class="form-group">
+  <%= form_for @page, url: user_page_path, remote: true do |f| %>
+
+  <p>
+    <%= f.label t('.title') %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </p>
+
+  <%= render 'components/samples/text' %>
+  <%= render 'components/samples/video' %>
+  <%= render 'components/samples/gallery' %>
+  <%= render 'components/samples/gallery_image' %>
+
+  <%= render 'page_editor' %>
+
+  <% end %>
+</div>
