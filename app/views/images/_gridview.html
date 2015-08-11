@@ -3,7 +3,7 @@
     <% images.each do |image| %>
       <% unless image.url.blank? %>
         <div class="col-md-3 thumb-image">
-          <div class="thumbnail image-miniature">
+          <div class="thumbnail image-miniature image-miniature-draggable">
             <%= cl_image_tag(image.url, :crop => :fill) %>
           </div>
         </div>

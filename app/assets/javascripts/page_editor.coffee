@@ -35,7 +35,7 @@ $ ->
     drop: ( event, ui ) ->
       create_new_component_form $(ui.draggable).attr('content-type')
 
-  $(".image-miniature").draggable
+  $(".image-miniature-draggable").draggable
     revert: "invalid",
     containment: "document",
     cursor: "move",
