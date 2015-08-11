@@ -101,6 +101,8 @@ set_onchange_form_action = (component_form) ->
       order = $(this).attr("data-order")
       form_control = $(this).find(".form-control").first()
       text = form_control.val()
+      if (content_type == "Video")
+        text =  getYouTubeId(text)
       $("input[name='components[#{order}][#{content_type}]']").attr('value', text)
     if content_type == "Gallery"
       alert "gallery changed"
@@ -176,3 +178,11 @@ switch_to_normal_mode = () ->
   $("#components-panel-container").addClass("col-md-12")
   $("#images-panel").hide()
 
+getYouTubeId = (url) ->
+    regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    match = url.match(regExp);
+
+    if (match && match[2].length == 11)
+        return match[2]
+    else
+        return 'error';

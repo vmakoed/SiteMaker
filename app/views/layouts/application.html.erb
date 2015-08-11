@@ -4,20 +4,15 @@
   <title>SiteMaker</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
 
   <% if current_user %>
-    <% theme = current_user.theme %>
     <% menu_orientation = current_user.menu_orientation %>
   <% else  %>
-    <% theme = "default" %>
     <% menu_orientation = "horizontal" %>
   <% end  %>
 
-  <% if theme == 'default' %>
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-  <% else %>
-      <link href="http://bootswatch.com/<%= theme %>/bootstrap.min.css" rel="stylesheet">
+  <% if current_user.theme.present? %>
+    <link href="http://bootswatch.com/<%= current_user.theme %>/bootstrap.min.css" rel="stylesheet">
   <% end %>
 
   <%= csrf_meta_tags %>
