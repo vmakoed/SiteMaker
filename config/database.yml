@@ -4,6 +4,9 @@ development:
   database: sitemaker_database
   pool: 5
   timeout: 5000
+  username: vmakoed
+  password:
+
 
 test:
   adapter: postgresql
@@ -11,6 +14,8 @@ test:
   database: sitemaker_database
   pool: 5
   timeout: 5000
+  username: vmakoed
+  password:
 
 production:
   adapter: postgresql

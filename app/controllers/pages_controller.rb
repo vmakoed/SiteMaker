@@ -30,8 +30,6 @@ class PagesController < ApplicationController
       @page.components.delete_all
       flash[:notice] = "All components destroyed"
     end
-    Page.reindex
-    Sunspot.commit
     respond_to do |format|
       format.html {redirect_to edit_user_page_path(@user, @page)}
       format.js {}
