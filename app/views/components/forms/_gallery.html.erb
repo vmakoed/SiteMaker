@@ -9,14 +9,14 @@
     <div class="panel-body panel-gallery">
       <ul class="list-group list-gallery-images">
         <% component.gallery_images.each_with_index do |image, index| %>
-        <li class="list-group-item" content-type="gallery-image">
-          <input type="hidden" class="hidden-input" name="components[<%= component.order %>][Gallery][<%= index %>]" value="<%= image.link %>">
-          <div class="thumb-image">
-            <div class="thumbnail image-miniature">
-              <img src="<%= image.link %>">
+          <li content-type="gallery-image">
+            <input type="hidden" class="hidden-input" name="components[<%= component.order %>][Gallery][<%= index %>]" value="<%= image.link %>">
+              <div class="thumb-image">
+                <div class="thumbnail image-miniature">
+                  <img src="<%= image.link %>">
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
         <% end %>
       </ul>
     </div>
