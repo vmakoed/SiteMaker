@@ -39,6 +39,7 @@ en:
       hide_images: "Hide images"
       drop_components: "Drop components here"
       images: "Images"
+      all_user_images: "All user's images"
       load_images: "Images can be loaded in Workspace"
       update_page: "Update page"
     publish_button:

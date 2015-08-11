@@ -39,6 +39,7 @@ ru:
       hide_images: "Скрыть изображения"
       drop_components: "Перетащите сюда компоненты"
       images: "Изображения"
+      all_user_images: "Все изображения пользователя"
       load_images: "Изображения можно загрузить в панели управления"
       update_page: "Сохранить страницу"
     publish_button:
