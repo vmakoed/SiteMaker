@@ -17,7 +17,7 @@
       <% @images.each do |image| %>
         <div class="col-md-3">
         <div class="thumbnail"><div class="image-preview-container">
-          <%= cl_image_tag image.url, :crop => :fill, class: 'image-miniature' %></div>
+          <%= cl_image_tag image.url, :crop => :fill, style: 'width:100%' %></div>
             <div class="btn-group" role="group">
             <div class="caption">
               <%= link_to 'Destroy', user_image_path(@user, image),
