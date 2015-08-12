@@ -4,7 +4,7 @@ development:
   database: sitemaker_database
   pool: 5
   timeout: 5000
-  username: vmakoed
+  username: eugene
   password:
 
 
@@ -14,7 +14,7 @@ test:
   database: sitemaker_database
   pool: 5
   timeout: 5000
-  username: vmakoed
+  username: eugene
   password:
 
 production:

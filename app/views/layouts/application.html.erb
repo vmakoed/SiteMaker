@@ -11,7 +11,7 @@
     <% menu_orientation = "horizontal" %>
   <% end  %>
 
-  <% if current_user.theme.present? %>
+  <% if current_user.present? %>
     <link href="http://bootswatch.com/<%= current_user.theme %>/bootstrap.min.css" rel="stylesheet">
   <% end %>
 
